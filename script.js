@@ -1,10 +1,10 @@
-const apiKey = "a40ea5f742ae9b8b64c23099caa358f4";
+import { API_KEY, API_URL, API_IMAGE_URL } from "./config";
 
 // Fetch Weather Data
 const fetchWeatherData = async (city) => {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+      `${API_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
     const data = await response.json();
     if (data.cod !== 200) {
@@ -37,14 +37,14 @@ const updateCurrentWeather = (data) => {
     data.weather[0].description;
   document.querySelector(
     "#current-icon"
-  ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  ).src = `${API_IMAGE_URL}/${data.weather[0].icon}@2x.png`;
 };
 
 // Fetch 5-Day Forecast
 const fetchForecast = async (city) => {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
+      `${API_URL}forecast?q=${city}&appid=${API_KEY}&units=metric`
     );
     const data = await response.json();
     updateForecast(data.list);
@@ -72,7 +72,7 @@ const updateForecast = (forecastList) => {
 
     const iconElement = document.createElement("img");
     iconElement.className = "mx-auto w-10 h-10";
-    iconElement.src = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
+    iconElement.src = `${API_IMAGE_URL}/${forecast.weather[0].icon}@2x.png`;
     card.appendChild(iconElement);
 
     const tempElement = document.createElement("p");
