@@ -11,19 +11,23 @@
     <title>Weather Forcast Application - Ayush-3012</title>
   </head>
   <body>
-    <div class="min-h-screen font-serif bg-blue-100 flex flex-col items-center">
-      <header class="bg-blue-500 text-white w-full text-center py-4">
+    <div class="min-h-screen font-serif bg-gray-200 flex flex-col items-center">
+      <header class="bg-blue-700 text-white w-full text-center py-4 shadow-lg">
         <h1 class="text-4xl font-bold">Weather Dashboard</h1>
       </header>
 
       <main class="w-11/12 max-w-4xl bg-white p-6 rounded-lg shadow-lg mt-8">
+        <!-- Input and Dropdown -->
         <div
           class="flex flex-col md:flex-row justify-between items-center mb-6"
         >
           <div class="w-full md:w-2/5 mb-4 md:mb-0">
-            <label for="city-input" class="block text-gray-700 font-medium mb-2"
-              >Enter a City Name</label
+            <label
+              for="city-input"
+              class="block text-gray-700 font-medium mb-2"
             >
+              Enter a City Name
+            </label>
             <input
               id="city-input"
               type="text"
@@ -32,7 +36,7 @@
             />
             <button
               id="search-btn"
-              class="bg-blue-500 my-2 text-white px-6 py-2 rounded shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+              class="bg-blue-600 my-2 text-white px-6 py-2 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
             >
               Search
             </button>
@@ -42,12 +46,40 @@
             >
               Use Current Location
             </button>
+            <div id="recent-cities-dropdown" class="relative mt-4 hidden">
+              <label class="block text-gray-700 font-medium mb-2"
+                >Recent Searches</label
+              >
+              <ul
+                class="border border-gray-300 rounded bg-white p-2 shadow-md"
+                id="recent-cities-list"
+              ></ul>
+            </div>
+          </div>
+          <!-- Clock Section -->
+          <div class="flex justify-center md:gap-4 sm:gap-2 md:px-4 sm:px-2">
+            <div class="text-center">
+              <p id="hour" class="text-lg font-bold"></p>
+              <p>Hours</p>
+            </div>
+            <div class="text-center">
+              <p id="minutes" class="text-lg font-bold"></p>
+              <p>Minutes</p>
+            </div>
+            <div class="text-center">
+              <p id="seconds" class="text-lg font-bold"></p>
+              <p>Seconds</p>
+            </div>
+            <div class="text-center">
+              <p id="ampm" class="text-lg font-bold"></p>
+              <p>AM/PM</p>
+            </div>
           </div>
         </div>
 
         <!-- Current Weather Display -->
         <div
-          class="bg-blue-300 text-slate p-4 rounded flex justify-between items-center mb-6"
+          class="bg-blue-300 text-gray-800 p-4 rounded flex justify-between items-center mb-6"
         >
           <div>
             <h2 class="text-xl font-bold" id="current-city"></h2>
@@ -56,8 +88,8 @@
             <p id="current-humidity"></p>
           </div>
           <div class="flex flex-col items-center">
-            <img src="" alt="" id="current-icon" class="" />
-            <p id="current-condition"></p>
+            <img src="" alt="" id="current-icon" />
+            <p class="capitalize" id="current-condition"></p>
           </div>
         </div>
 
@@ -67,13 +99,11 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4"
             id="forecastContainer"
-          >
-            <!-- Forecast Cards -->
-          </div>
+          ></div>
         </div>
       </main>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
