@@ -1,0 +1,16 @@
+Github:- https://github.com/Ayush-3012/WFA-Ayush-3012/tree/main
+
+Setup Instructions - 
+Don't forget to replace the API_KEY in the config.example.js file with your OPENWEATHER API KEY.
+
+Clone the repository:
+	git clone https://github.com/yourusername/weather-dashboard.git
+	cd weather-dashboard
+
+Update config.example.js with your OpenWeatherMap API key;
+	* export const API_KEY = "your_openweather_api_key";
+	* export const API_URL = "https://api.openweathermap.org/data/2.5/";
+	* export const API_IMAGE_URL = "https://openweathermap.org/img/wn";
+
+Open index.html with live-server as this is bound under CORS Policy.
+Opening with live-server will help you to access the project functioning seamlessly.
