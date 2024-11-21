@@ -20,6 +20,8 @@ A responsive weather dashboard that shows current weather and a 5-day forecast f
 2. Update config.js with your OpenWeatherMap API key:
    ```bash
    export const API_KEY = "your_openweather_api_key";
+   export const API_URL = "https://api.openweathermap.org/data/2.5/";
+   export const API_IMAGE_URL = "https://openweathermap.org/img/wn";
 4. Open index.html in your browser to view the application.
 
 ## Technologies Used
