@@ -1,4 +1,7 @@
-import { API_KEY, API_URL, API_IMAGE_URL } from "./config.js";
+// import { API_KEY, API_URL, API_IMAGE_URL } from "./config.js";
+const API_KEY = "a40ea5f742ae9b8b64c23099caa358f4";
+const API_URL = "https://api.openweathermap.org/data/2.5/";
+const API_IMAGE_URL = "https://openweathermap.org/img/wn";
 
 const fetchWeatherData = async (query) => {
   try {
