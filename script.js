@@ -1,5 +1,4 @@
 import { API_KEY, API_URL, API_IMAGE_URL } from "./config.js";
-// import { API_KEY, API_URL, API_IMAGE_URL } from "./config.example.js";
 
 const fetchWeatherData = async (query) => {
   try {
